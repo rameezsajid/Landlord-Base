@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "302579797266-9ecurf9ofbu8tenivgioo780rp95515e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rameezsajid.propertymanagementapplication",
+            "certificate_hash": "aec281a392dedc6b4cef799290d7987e272825ab"
+          }
+        },
+        {
           "client_id": "302579797266-4a83fafkc9ri3l48ea3318l0ahn301vc.apps.googleusercontent.com",
           "client_type": 3
         }
