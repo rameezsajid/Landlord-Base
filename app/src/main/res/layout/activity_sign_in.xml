@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SignInActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,10 +13,10 @@
         android:padding="20dp">
 
         <TextView
-            android:id="@+id/text_view_LoginLabel"
+            android:id="@+id/text_view_RegisterLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Register"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:textSize="20sp"/>
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:hint="Email"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/text_view_LoginLabel"
+            android:layout_below="@+id/text_view_RegisterLabel"
             android:layout_marginTop="10dp"/>
 
         <EditText
@@ -40,26 +40,25 @@
             android:layout_marginTop="10dp"/>
 
         <Button
-            android:id="@+id/button_Login"
+            android:id="@+id/button_Register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Register"
             android:padding="5dp"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/edit_text_Password"
             android:layout_centerHorizontal="true"/>
 
         <TextView
-            android:id="@+id/text_view_Register"
+            android:id="@+id/text_view_Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't Have a Account?"
-            android:layout_below="@id/button_Login"
+            android:text="Back To Login"
+            android:layout_below="@id/button_Register"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"/>
 
     </RelativeLayout>
-
 
 
 </RelativeLayout>
