@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">PropertyManagementApplication</string>
+
+    <array name="properties">
+        <item>Detached</item>
+        <item>Semi-Detached</item>
+        <item>Terraced</item>
+        <item>Bungalow</item>
+        <item>Flat</item>
+    </array>
 </resources>

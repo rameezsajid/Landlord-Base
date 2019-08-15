@@ -7,8 +7,27 @@
     tools:context=".DashboardActivity">
 
     <TextView
+        android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="You have logged in successfully"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go To Properties"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/dashboardButton"
+        android:layout_below="@+id/label"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go To Report Generator"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/dashboardButton2"
+        android:layout_below="@+id/dashboardButton"/>
 
 </RelativeLayout>
