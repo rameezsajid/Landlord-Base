@@ -12,40 +12,46 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout3">
+
+        <EditText
+            android:id="@+id/editText_Location_Update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Property Location"
+            android:layout_marginBottom="20dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Holder1"
-            android:id="@+id/tv_Report_Location"
-            android:padding="15dp"/>
+            android:text="Add Property Type"
+            android:paddingLeft="10dp"/>
 
-        <TextView
+        <Spinner
+            android:id="@+id/spinner_Type_Update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Holder1"
-            android:id="@+id/tv_Report_Type"
-            android:padding="15dp"/>
+            android:layout_marginBottom="15dp"
+            android:entries="@array/properties" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Check Report"
-            android:id="@+id/btnReport"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update"
-            android:id="@+id/btnUpdate"/>
+            android:id="@+id/btnUpdate_Update"
+            android:text="Update"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDelete_Update"
+            android:text="Delete"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cancel"
-            android:id="@+id/btnClose"/>
-
+            android:id="@+id/btnClose_Update"/>
 
     </LinearLayout>
 

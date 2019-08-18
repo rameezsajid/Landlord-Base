@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="50dp"
+    android:paddingRight="15dp"
+    android:paddingLeft="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:id="@+id/linearLayout2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_Location"
+                android:text="@string/report_propertyLocation"
+                android:padding="5dp"
+                android:textSize="17sp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Holder1"
+                android:id="@+id/tv_Report_Location_Report2"
+                android:layout_below="@+id/tv_Location"
+                android:padding="5dp"
+                android:textSize="17sp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/string_Type"
+                android:text="@string/report_propertyType"
+                android:padding="5dp"
+                android:textSize="17sp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Holder1"
+                android:id="@+id/tv_Report2"
+                android:layout_below="@+id/string_Type"
+                android:padding="5dp"
+                android:textSize="17sp"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:id="@+id/btnUpdate_Report"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Close"
+            android:id="@+id/btnClose_Report"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -8,4 +8,8 @@
         <item>Bungalow</item>
         <item>Flat</item>
     </array>
+
+    <string name="report_propertyLocation">Location of Your Property:   </string>
+    <string name="report_propertyType">Your Property is a </string>
+    <string name="report_propertyStatus">The Property is Currently </string>
 </resources>
