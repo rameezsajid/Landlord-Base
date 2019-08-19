@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PropertyInformationActivity"></activity>
+        <activity android:name=".ReportActivity"></activity>
+        <activity android:name=".PropertyInformationActivity" />
         <activity android:name=".PropertyActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".DashboardActivity" />

@@ -100,7 +100,7 @@ public class PropertyActivity extends AppCompatActivity {
         final Button buttonReport = (Button) dialogView.findViewById(R.id.btnReport);
         final Button buttonUpdate = (Button) dialogView.findViewById(R.id.btnUpdate);
 
-        dialogBuilder.setTitle("Updating Property " + propertyLocation);
+        dialogBuilder.setTitle("Your Property " + propertyLocation);
         final AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
 
@@ -174,7 +174,7 @@ public class PropertyActivity extends AppCompatActivity {
         final Button buttonClose = (Button) dialogView.findViewById(R.id.btnClose_Report);
         final Button buttonUpdate = (Button) dialogView.findViewById(R.id.btnUpdate_Report);
 
-        dialogBuilder.setTitle("Updating Property " + propertyLocation);
+        dialogBuilder.setTitle("Property Report " + propertyLocation);
         final AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
 
