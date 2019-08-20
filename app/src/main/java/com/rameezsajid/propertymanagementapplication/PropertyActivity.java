@@ -45,6 +45,10 @@ public class PropertyActivity extends AppCompatActivity {
 
     List<Properties> propertiesList;
 
+    List<PropertiesLocation> propertiesListLocation;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +71,8 @@ public class PropertyActivity extends AppCompatActivity {
 
         propertiesList = new ArrayList<>();
 
+        propertiesListLocation = new ArrayList<>();
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +86,10 @@ public class PropertyActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Properties properties = propertiesList.get(i);
 
-                showDialogBox(properties.getPropertyID(), properties.getPropertyLocation());
+
+
+
+                //showDialogBox(properties.getPropertyID(), properties.getPropertyLocation());
 
             }
         });
@@ -115,6 +124,8 @@ public class PropertyActivity extends AppCompatActivity {
         buttonReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 reportDialogBox(propertyID, propertyLocation);
                 alertDialog.dismiss();
             }

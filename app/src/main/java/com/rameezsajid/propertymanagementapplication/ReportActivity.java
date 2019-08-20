@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -34,6 +36,8 @@ public class ReportActivity extends AppCompatActivity {
 
     List<PropertiesLocation> propertiesListLocation;
 
+    List<Properties> propertiesList;
+
     ListView listViewProperties;
 
     @Override
@@ -51,7 +55,25 @@ public class ReportActivity extends AppCompatActivity {
 
         propertiesListLocation = new ArrayList<>();
 
+        propertiesList = new ArrayList<>();
+
         listViewProperties = (ListView) findViewById(R.id.listViewTesting);
+
+        listViewProperties.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String PropertiesLocation = propertiesList.get(i).getPropertyLocation();
+                String PropertiesType = propertiesList.get(i).getPropertyType();
+
+                Intent reportIntent = new Intent(ReportActivity.this, PropertyInformationActivity.class);
+
+                reportIntent.putExtra("propertyCurrent", PropertiesLocation);
+                reportIntent.putExtra("propertyType", PropertiesType);
+                startActivity(reportIntent);
+
+
+            }
+        });
 
     }
 
@@ -64,15 +86,15 @@ public class ReportActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                propertiesListLocation.clear();
+                propertiesList.clear();
 
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    PropertiesLocation property = data.getValue(PropertiesLocation.class);
+                    Properties property = data.getValue(Properties.class);
 
-                    propertiesListLocation.add(property);
+                    propertiesList.add(property);
                 }
 
-                PropertyListLocation adapter = new PropertyListLocation(ReportActivity.this, propertiesListLocation);
+                PropertyList adapter = new PropertyList(ReportActivity.this, propertiesList);
                 listViewProperties.setAdapter(adapter);
             }
 
@@ -82,8 +104,4 @@ public class ReportActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
 }
