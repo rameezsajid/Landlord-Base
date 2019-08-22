@@ -34,6 +34,14 @@
             android:layout_marginBottom="15dp"
             android:entries="@array/properties" />
 
+        <EditText
+            android:id="@+id/editText_Rent_Update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Monthly Rental Amount"
+            android:layout_marginBottom="20dp"
+            android:inputType="number"/>
+
 
         <Button
             android:layout_width="match_parent"

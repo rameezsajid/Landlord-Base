@@ -28,15 +28,6 @@ import java.util.List;
 
 public class ReportActivity extends AppCompatActivity {
 
-    private String userID;
-
-
-    private FirebaseAuth mAuth;
-    private DatabaseReference myRef;
-
-    List<PropertiesLocation> propertiesListLocation;
-
-    List<Properties> propertiesList;
 
     ListView listViewProperties;
 
@@ -45,31 +36,19 @@ public class ReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
 
-        mAuth = FirebaseAuth.getInstance();
-
-        myRef = FirebaseDatabase.getInstance().getReference("properties");
-
-        FirebaseUser user = mAuth.getCurrentUser();
-
-        userID = user.getUid();
-
-        propertiesListLocation = new ArrayList<>();
-
-        propertiesList = new ArrayList<>();
-
         listViewProperties = (ListView) findViewById(R.id.listViewTesting);
 
         listViewProperties.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String PropertiesLocation = propertiesList.get(i).getPropertyLocation();
-                String PropertiesType = propertiesList.get(i).getPropertyType();
-
-                Intent reportIntent = new Intent(ReportActivity.this, PropertyInformationActivity.class);
-
-                reportIntent.putExtra("propertyCurrent", PropertiesLocation);
-                reportIntent.putExtra("propertyType", PropertiesType);
-                startActivity(reportIntent);
+//                String PropertiesLocation = propertiesList.get(i).getPropertyLocation();
+//                String PropertiesType = propertiesList.get(i).getPropertyType();
+//
+//                Intent reportIntent = new Intent(ReportActivity.this, PropertyInformationActivity.class);
+//
+//                reportIntent.putExtra("propertyCurrent", PropertiesLocation);
+//                reportIntent.putExtra("propertyType", PropertiesType);
+//                startActivity(reportIntent);
 
 
             }
@@ -77,31 +56,4 @@ public class ReportActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-
-        FirebaseDatabase.getInstance().getReference("properties").getRef().child(userID).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                propertiesList.clear();
-
-                for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    Properties property = data.getValue(Properties.class);
-
-                    propertiesList.add(property);
-                }
-
-                PropertyList adapter = new PropertyList(ReportActivity.this, propertiesList);
-                listViewProperties.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
 }

@@ -1,8 +1,12 @@
 package com.rameezsajid.propertymanagementapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,6 +31,9 @@ public class PropertyInformationActivity extends AppCompatActivity {
 
     private String currentProperty;
     private String currentPropertyType;
+    private String currentRental;
+
+    List<Properties> propertiesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,18 +48,25 @@ public class PropertyInformationActivity extends AppCompatActivity {
 
         userID = user.getUid();
 
+        propertiesList = new ArrayList<>();
+
         TextView tvHolder1 = findViewById(R.id.tv_PI1);
         TextView tvHolder2 = findViewById(R.id.tv_PI2);
+        TextView tvHolder3 = findViewById(R.id.tv_PI3);
 
         currentProperty = getIntent().getExtras().get("propertyCurrent").toString();
         currentPropertyType = getIntent().getExtras().get("propertyType").toString();
+        currentRental = getIntent().getExtras().get("propertyRental").toString();
 
         tvHolder1.setText("Your Property Location is in " + currentProperty);
         tvHolder2.setText("Your Property Type is a " + currentPropertyType);
+        tvHolder3.setText("The Monthly Rental is " + currentRental);
 
 
 
 
     }
+
+
 
 }
