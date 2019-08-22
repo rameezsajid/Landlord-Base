@@ -31,12 +31,12 @@ public class PropertyList extends ArrayAdapter<Properties> {
 
 
         TextView textViewLocation = (TextView)listViewItem.findViewById(R.id.textViewLocation);
-        TextView textViewRent = (TextView)listViewItem.findViewById(R.id.textViewRent);
+        TextView textViewAddress = (TextView)listViewItem.findViewById(R.id.textViewAddress);
 
         Properties properties = propertyList.get(position);
 
         textViewLocation.setText(properties.getPropertyLocation());
-        textViewRent.setText(properties.getPropertyRental());
+        textViewAddress.setText(properties.getPropertyAddress());
 
 
         return listViewItem;

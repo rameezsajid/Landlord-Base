@@ -16,8 +16,6 @@ public class DashboardActivity extends AppCompatActivity {
 
         Button dashboardButton = findViewById(R.id.dashboardButton);
 
-        Button dashboardButton2 = findViewById(R.id.dashboardButton2);
-
         dashboardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -25,12 +23,6 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        dashboardButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DashboardActivity.this, ReportActivity.class));
-            }
-        });
 
 
     }

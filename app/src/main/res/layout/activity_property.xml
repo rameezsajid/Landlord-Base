@@ -5,41 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".PropertyActivity">
 
-    <EditText
-        android:id="@+id/editTextPropertyLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Property Location"
-        android:layout_marginBottom="15dp"/>
-
-    <Spinner
-        android:id="@+id/spinnerProperty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:entries="@array/properties" />
-
-    <EditText
-        android:id="@+id/editTextRent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Amount Monthly Rental"
-        android:inputType="number"/>
 
     <Button
-        android:id="@+id/buttonAddProperty"
-        android:layout_width="170dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Add Property" />
+        android:id="@+id/btnGoToAdd"
+        android:text="Add Properties"
+        android:padding="10dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Properties"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:padding="15dp"/>
 
     <ListView
         android:id="@+id/listViewProperties2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"></ListView>
+
 
 </LinearLayout>
