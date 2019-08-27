@@ -62,12 +62,28 @@
             android:hint="Enter Tenant Name"
             android:layout_marginBottom="15dp"/>
 
-        <Spinner
-            android:id="@+id/spinnerManagementType"
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:entries="@array/management" />
+            android:layout_margin="25dp"
+            android:id="@+id/radioGroup1">
+
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Property Management Professionals"
+                android:id="@+id/radioButtonOption1"
+                android:layout_marginBottom="15dp"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Private"
+                android:id="@+id/radioButtonOption2"/>
+
+
+        </RadioGroup>
 
         <EditText
             android:id="@+id/editTextManagementName"

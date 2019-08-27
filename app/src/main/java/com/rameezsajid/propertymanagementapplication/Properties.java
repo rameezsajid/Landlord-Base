@@ -10,13 +10,12 @@ public class Properties {
     String propertyRental;
     String propertyTenancyLength;
     String propertyTenantName;
-    String propertyManagementType;
     String propertyManagementName;
 
     public Properties() {
     }
 
-    public Properties(String propertyID, String propertyLocation, String propertyAddress, String propertyPostcode, String propertyType, String propertyRental, String propertyTenancyLength, String propertyTenantName, String propertyManagementType, String propertyManagementName) {
+    public Properties(String propertyID, String propertyLocation, String propertyAddress, String propertyPostcode, String propertyType, String propertyRental, String propertyTenancyLength, String propertyTenantName, String propertyManagementName) {
         this.propertyID = propertyID;
         this.propertyLocation = propertyLocation;
         this.propertyAddress = propertyAddress;
@@ -25,7 +24,6 @@ public class Properties {
         this.propertyRental = propertyRental;
         this.propertyTenancyLength = propertyTenancyLength;
         this.propertyTenantName = propertyTenantName;
-        this.propertyManagementType = propertyManagementType;
         this.propertyManagementName = propertyManagementName;
     }
 
@@ -91,14 +89,6 @@ public class Properties {
 
     public void setPropertyTenantName(String propertyTenantName) {
         this.propertyTenantName = propertyTenantName;
-    }
-
-    public String getPropertyManagementType() {
-        return propertyManagementType;
-    }
-
-    public void setPropertyManagementType(String propertyManagementType) {
-        this.propertyManagementType = propertyManagementType;
     }
 
     public String getPropertyManagementName() {

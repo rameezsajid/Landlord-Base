@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,7 +41,6 @@ public class PropertyActivity extends AppCompatActivity {
     private EditText editTextPostcode;
     private EditText editTextTenancyLength;
     private EditText editTextTenantName;
-    private Spinner spinnerManagementType;
     private EditText editTextManagementName;
 
 
@@ -54,23 +56,10 @@ public class PropertyActivity extends AppCompatActivity {
 
     List<Properties> propertiesList;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_property);
-
-
-//        editTextLocation = (EditText) findViewById(R.id.editTextPropertyLocation);
-//        spinnerPropertyType = (Spinner) findViewById(R.id.spinnerProperty);
-//        editTextRental = (EditText) findViewById(R.id.editTextRent);
-//        editTextAddress = (EditText) findViewById(R.id.editTextPropertyAddress);
-//        editTextPostcode = findViewById(R.id.editTextPropertyPostcode);
-//        editTextTenancyLength = findViewById(R.id.editTextPropertyTenancyLength);
-//        editTextManagementName = findViewById(R.id.editTextManagementName);
-//        spinnerManagementType = findViewById(R.id.spinnerManagementType);
-//        editTextTenantName = findViewById(R.id.editTextPropertyTenantName);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -94,39 +83,6 @@ public class PropertyActivity extends AppCompatActivity {
             }
         });
 
-        //when list view clicked will open dialog
-//        listViewProperties.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//                String PropertiesLocation = propertiesList.get(i).getPropertyLocation();
-//                String PropertiesType = propertiesList.get(i).getPropertyType();
-//
-//                Intent reportIntent = new Intent(PropertyActivity.this, PropertyInformationActivity.class);
-//
-//                reportIntent.putExtra("propertyCurrent", PropertiesLocation);
-//                reportIntent.putExtra("propertyType", PropertiesType);
-//                startActivity(reportIntent);
-//
-//
-//
-//
-//                //showDialogBox(properties.getPropertyID(), properties.getPropertyLocation());
-//
-//            }
-//        });
-
-//        listViewProperties.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public void onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Properties properties = propertiesList.get(i);
-//
-//                showDialogBox(properties.getPropertyID(), properties.getPropertyLocation());
-//
-//            }
-//        });
-
-
 
 
         listViewProperties.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -134,23 +90,21 @@ public class PropertyActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Properties properties =  propertiesList.get(i);
 
-                showDialogBox(properties.getPropertyID(), properties.getPropertyLocation(), properties.getPropertyType(), properties.getPropertyRental());
+                showDialogBox(properties.getPropertyID(), properties.getPropertyLocation(), properties.getPropertyType(), properties.getPropertyRental(), properties.getPropertyManagementName());
             }
         });
 
 
 
+
+
     }
 
-    private void showDialogBox(final String propertyID, final String propertyLocation, final String propertyType, final String propertyRental) {
+    private void showDialogBox(final String propertyID, final String propertyLocation, final String propertyType, final String propertyRental, final String managementName) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(PropertyActivity.this);
         LayoutInflater inflater = getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.dialog_box, null);
         dialogBuilder.setView(dialogView);
-
-        final TextView tvReportLocation = (TextView) dialogView.findViewById(R.id.tv_Report_Location);
-        final TextView tvReportType = (TextView) dialogView.findViewById(R.id.tv_Report_Type);
-        final TextView tvRental = (TextView) dialogView.findViewById(R.id.tv_Report_Rental);
 
         final Button buttonCancel = (Button) dialogView.findViewById(R.id.btnClose);
         final Button buttonReport = (Button) dialogView.findViewById(R.id.btnReport);
@@ -159,8 +113,6 @@ public class PropertyActivity extends AppCompatActivity {
         dialogBuilder.setTitle("Your Property " + propertyLocation);
         final AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
-
-
 
         buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,10 +129,13 @@ public class PropertyActivity extends AppCompatActivity {
                 String PropertiesLocation = propertyLocation;
                 String PropertyType = propertyType;
                 String PropertyRental = propertyRental;
+                String ManagementName = managementName;
                 Intent reportIntent = new Intent(PropertyActivity.this, PropertyInformationActivity.class);
                 reportIntent.putExtra("propertyCurrent", PropertiesLocation);
                 reportIntent.putExtra("propertyType", PropertyType);
                 reportIntent.putExtra("propertyRental", PropertyRental);
+                reportIntent.putExtra("managementName", ManagementName);
+
 
                 startActivity(reportIntent);
                 alertDialog.dismiss();
@@ -198,74 +153,6 @@ public class PropertyActivity extends AppCompatActivity {
     }
 
 
-//    private void reportDialogBox(final String propertyID, final String propertyLocation){
-//        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(PropertyActivity.this);
-//        LayoutInflater inflater = getLayoutInflater();
-//        final View dialogView = inflater.inflate(R.layout.dialog_box_report, null);
-//        dialogBuilder.setView(dialogView);
-//
-//        final TextView tvReportLocationReport = (TextView) dialogView.findViewById(R.id.tv_Report_Location_Report2);
-//        final TextView tvReportTypeReport = (TextView) dialogView.findViewById(R.id.tv_Report2);
-//
-//        final Button buttonClose = (Button) dialogView.findViewById(R.id.btnClose_Report);
-//        final Button buttonUpdate = (Button) dialogView.findViewById(R.id.btnUpdate_Report);
-//
-//        dialogBuilder.setTitle("Property Report " + propertyLocation);
-//        final AlertDialog alertDialog = dialogBuilder.create();
-//        alertDialog.show();
-//
-//        // Add Methods for Buttons
-//
-//        buttonClose.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                alertDialog.dismiss();
-//            }
-//        });
-//
-//        buttonUpdate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                updateDialogBox(propertyID, propertyLocation);
-//                alertDialog.dismiss();
-//            }
-//        });
-//
-//
-//        DatabaseReference mFirebaseRef = FirebaseDatabase.getInstance().getReference();
-//
-//
-//        Query query = mFirebaseRef.child("properties").child(userID).child(propertyID);
-//
-//        query.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                tvReportLocationReport.setText(dataSnapshot.child("propertyLocation").getValue(String.class));
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        Query query2 = mFirebaseRef.child("properties").child(userID).child(propertyID);
-//
-//        query2.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                tvReportTypeReport.setText(dataSnapshot.child("propertyType").getValue(String.class));
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//
-//    }
-
     private void updateDialogBox(final String propertyID, final String propertyLocation){
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(PropertyActivity.this);
         LayoutInflater inflater = getLayoutInflater();
@@ -279,15 +166,23 @@ public class PropertyActivity extends AppCompatActivity {
         final EditText etPostcodeUpdate = dialogView.findViewById(R.id.editTextPropertyPostcode_Update);
         final EditText etManagementNameUpdate = dialogView.findViewById(R.id.editTextManagementName_Update);
         final EditText etTenantNameUpdate = dialogView.findViewById(R.id.editTextPropertyTenantName_Update);
-        final Spinner spinnerManagementTypeUpdate = dialogView.findViewById(R.id.spinnerManagementType_Update);
         final EditText etTenancyLengthUpdate = dialogView.findViewById(R.id.editTextPropertyTenancyLength_Update);
 
         final Button buttonCloseUpdate = (Button) dialogView.findViewById(R.id.btnClose_Update);
         final Button buttonUpdateUpdate = (Button) dialogView.findViewById(R.id.btnUpdate_Update);
+        final Button buttonDelete = (Button) dialogView.findViewById(R.id.btnDelete_Update);
 
         dialogBuilder.setTitle("Updating Property " + propertyLocation);
         final AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteProperties(propertyID);
+                alertDialog.dismiss();
+            }
+        });
 
         buttonCloseUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -306,7 +201,6 @@ public class PropertyActivity extends AppCompatActivity {
                 String postcode = etPostcodeUpdate.getText().toString().trim();
                 String t_length = etTenancyLengthUpdate.getText().toString().trim();
                 String t_name = etTenantNameUpdate.getText().toString().trim();
-                String m_type = spinnerManagementTypeUpdate.getSelectedItem().toString();
                 String m_name = etManagementNameUpdate.getText().toString().trim();
 
 
@@ -314,7 +208,7 @@ public class PropertyActivity extends AppCompatActivity {
                     etLocationUpdate.setError("Field Required");
                     return;
                 }
-                updateProperties(propertyID, location, address, postcode, type, rent, t_length, t_name, m_type, m_name);
+                updateProperties(propertyID, location, address, postcode, type, rent, t_length, t_name, m_name);
 
                 alertDialog.dismiss();
 
@@ -425,10 +319,16 @@ public class PropertyActivity extends AppCompatActivity {
 
     }
 
-    private boolean updateProperties (String id, String location, String address, String postcode, String type, String rent, String t_length, String t_name, String m_type, String m_name){
+    private void deleteProperties(String propertyID){
+        DatabaseReference drProperties = FirebaseDatabase.getInstance().getReference("properties").child(userID).child(propertyID);
+        drProperties.removeValue();
+        Toast.makeText(PropertyActivity.this, "Deleted Property", Toast.LENGTH_SHORT).show();
+    }
+
+    private boolean updateProperties (String id, String location, String address, String postcode, String type, String rent, String t_length, String t_name, String m_name){
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("properties").child(userID).child(id);
 
-        Properties properties = new Properties(id, location, address, postcode, type, rent, t_length, t_name, m_type, m_name);
+        Properties properties = new Properties(id, location, address, postcode, type, rent, t_length, t_name, m_name);
 
         databaseReference.setValue(properties);
 
@@ -455,10 +355,26 @@ public class PropertyActivity extends AppCompatActivity {
         editTextPostcode = dialogView.findViewById(R.id.editTextPropertyPostcode);
         editTextTenancyLength = dialogView.findViewById(R.id.editTextPropertyTenancyLength);
         editTextManagementName = dialogView.findViewById(R.id.editTextManagementName);
-        spinnerManagementType = dialogView.findViewById(R.id.spinnerManagementType);
         editTextTenantName = dialogView.findViewById(R.id.editTextPropertyTenantName);
 
         addButton = (Button) dialogView.findViewById(R.id.buttonAddProperty);
+
+        final RadioGroup radioGroup1 = (RadioGroup) dialogView.findViewById(R.id.radioGroup1);
+
+        final RadioButton radioOption1 = (RadioButton) dialogView.findViewById(R.id.radioButtonOption1);
+        final RadioButton radioOption2 = (RadioButton) dialogView.findViewById(R.id.radioButtonOption2);
+
+        radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(radioOption1.isChecked()){
+                    editTextManagementName.setVisibility(View.VISIBLE);
+                    editTextManagementName.setFocusable(true);
+                }else if (radioOption2.isChecked()){
+                    editTextManagementName.setVisibility(View.GONE);
+                }
+            }
+        });
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -471,20 +387,20 @@ public class PropertyActivity extends AppCompatActivity {
                 String t_name = editTextTenantName.getText().toString().trim();
                 String rent = editTextRental.getText().toString().trim();
                 String m_name = editTextManagementName.getText().toString().trim();
-                String m_type = spinnerManagementType.getSelectedItem().toString();
 
-                if (!TextUtils.isEmpty(location)){
+
+                if (!TextUtils.isEmpty(location) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(postcode)){
 
                     String id = myRef.push().getKey();
 
-                    Properties properties = new Properties(id, location, address, postcode, type, rent, t_length, t_name, m_type, m_name);
+                    Properties properties = new Properties(id, location, address, postcode, type, rent, t_length, t_name, m_name);
 
                     myRef.child(userID).child(id).setValue(properties);
 
                     Toast.makeText(PropertyActivity.this, "Property Added", Toast.LENGTH_SHORT).show();
                     alertDialog.dismiss();
 
-                }else {
+                } else {
                     Toast.makeText(PropertyActivity.this, "Fill all fields", Toast.LENGTH_SHORT).show();
                 }
 

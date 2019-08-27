@@ -33,6 +33,16 @@
         android:text="Holder3"
         android:layout_below="@id/tv_PI2"
         android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_PI4"
+        android:text="Holder4"
+        android:layout_below="@id/tv_PI3"
+        android:textSize="20sp"
         android:textStyle="bold"/>
 
 

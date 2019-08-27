@@ -32,6 +32,7 @@ public class PropertyInformationActivity extends AppCompatActivity {
     private String currentProperty;
     private String currentPropertyType;
     private String currentRental;
+    private String managementName;
 
     List<Properties> propertiesList;
 
@@ -52,17 +53,39 @@ public class PropertyInformationActivity extends AppCompatActivity {
 
         TextView tvHolder1 = findViewById(R.id.tv_PI1);
         TextView tvHolder2 = findViewById(R.id.tv_PI2);
-        TextView tvHolder3 = findViewById(R.id.tv_PI3);
 
         currentProperty = getIntent().getExtras().get("propertyCurrent").toString();
         currentPropertyType = getIntent().getExtras().get("propertyType").toString();
         currentRental = getIntent().getExtras().get("propertyRental").toString();
+        managementName = getIntent().getExtras().get("managementName").toString();
+
+
 
         tvHolder1.setText("Your Property Location is in " + currentProperty);
         tvHolder2.setText("Your Property Type is a " + currentPropertyType);
-        tvHolder3.setText("The Monthly Rental is " + currentRental);
+
+        checkIfEmpty();
 
 
+    }
+
+    private void checkIfEmpty(){
+
+        TextView tvHolder3 = findViewById(R.id.tv_PI3);
+        TextView tvHolder4 = findViewById(R.id.tv_PI4);
+
+        if (currentRental.isEmpty()){
+            tvHolder3.setText("Empty Rental");
+        }else {
+            tvHolder3.setText("The Monthly Rental is " + currentRental);
+        }
+
+
+        if (managementName.isEmpty()){
+            tvHolder4.setText("Your Property is Privately Rented");
+        }else {
+            tvHolder4.setText("Management Name: " + managementName);
+        }
 
 
     }

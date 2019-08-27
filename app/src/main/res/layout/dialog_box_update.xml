@@ -64,13 +64,6 @@
             android:hint="Enter Tenant Name"
             android:layout_marginBottom="15dp"/>
 
-        <Spinner
-            android:id="@+id/spinnerManagementType_Update"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:entries="@array/management" />
-
         <EditText
             android:id="@+id/editTextManagementName_Update"
             android:layout_width="match_parent"
