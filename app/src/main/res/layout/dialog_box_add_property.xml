@@ -99,6 +99,13 @@
             android:layout_gravity="center"
             android:text="Add Property" />
 
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Cancel" />
+
 
     </LinearLayout>
 

@@ -364,6 +364,8 @@ public class PropertyActivity extends AppCompatActivity {
         final RadioButton radioOption1 = (RadioButton) dialogView.findViewById(R.id.radioButtonOption1);
         final RadioButton radioOption2 = (RadioButton) dialogView.findViewById(R.id.radioButtonOption2);
 
+        final Button buttonCancel = (Button) dialogView.findViewById(R.id.buttonCancel);
+
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -404,6 +406,13 @@ public class PropertyActivity extends AppCompatActivity {
                     Toast.makeText(PropertyActivity.this, "Fill all fields", Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
             }
         });
 
