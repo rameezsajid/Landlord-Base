@@ -30,7 +30,8 @@
                     android:text="Textview"
                     android:id="@+id/textViewLocation"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="#fff"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -39,7 +40,8 @@
                     android:id="@+id/textViewAddress"
                     android:textSize="17sp"
                     android:layout_marginTop="15dp"
-                    android:layout_below="@+id/textViewLocation"/>
+                    android:layout_below="@+id/textViewLocation"
+                    android:textColor="#fff"/>
 
                 <ImageView
                     android:layout_width="67dp"

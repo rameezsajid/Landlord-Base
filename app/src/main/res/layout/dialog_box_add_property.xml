@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="25dp">
 
         <EditText
             android:id="@+id/editTextPropertyLocation"
@@ -20,7 +20,7 @@
             android:hint="Enter Property Location"
             android:layout_marginBottom="25dp"
             android:gravity="center"
-            android:background="@drawable/et_login"/>
+            android:background="@drawable/et_add_properties"/>
 
         <EditText
             android:id="@+id/editTextPropertyAddress"
@@ -29,7 +29,7 @@
             android:hint="Enter Property Address"
             android:layout_marginBottom="25dp"
             android:gravity="center"
-            android:background="@drawable/et_login"/>
+            android:background="@drawable/et_add_properties"/>
 
         <EditText
             android:id="@+id/editTextPropertyPostcode"
@@ -38,7 +38,7 @@
             android:hint="Enter Property Postcode"
             android:layout_marginBottom="25dp"
             android:gravity="center"
-            android:background="@drawable/et_login"/>
+            android:background="@drawable/et_add_properties"/>
 
         <Spinner
             android:id="@+id/spinnerProperty"
@@ -47,7 +47,7 @@
             android:layout_marginBottom="25dp"
             android:entries="@array/properties"
             android:textAlignment="center"
-            android:background="@drawable/et_login"/>
+            android:background="@drawable/et_add_properties"/>
 
         <EditText
             android:id="@+id/editTextRent"
@@ -57,7 +57,7 @@
             android:inputType="number"
             android:layout_marginBottom="25dp"
             android:gravity="center"
-            android:background="@drawable/et_login"/>
+            android:background="@drawable/et_add_properties"/>
 
         <EditText
             android:id="@+id/editTextPropertyTenancyLength"
@@ -67,7 +67,7 @@
             android:layout_marginBottom="25dp"
             android:inputType="number"
             android:gravity="center"
-            android:background="@drawable/et_login"/>
+            android:background="@drawable/et_add_properties"/>
 
         <EditText
             android:id="@+id/editTextPropertyTenantName"
@@ -76,14 +76,14 @@
             android:hint="Enter Tenant Name"
             android:layout_marginBottom="25dp"
             android:gravity="center"
-            android:background="@drawable/et_login"/>
+            android:background="@drawable/et_add_properties"/>
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:id="@+id/radioGroup1"
-            android:background="@drawable/et_login"
+            android:background="@drawable/et_add_properties"
             android:padding="20dp">
 
 
@@ -110,7 +110,7 @@
             android:hint="Enter Management Name"
             android:layout_marginBottom="25dp"
             android:gravity="center"
-            android:background="@drawable/et_login"/>
+            android:background="@drawable/et_add_properties"/>
 
         <Button
             android:id="@+id/buttonAddProperty"
@@ -120,8 +120,8 @@
             android:layout_marginBottom="25dp"
             android:text="Add Property"
             android:gravity="center"
-            android:background="@drawable/button_general"
-            android:textColor="#fff"/>
+            android:background="@drawable/button_properties"
+            android:textColor="#000"/>
 
         <Button
             android:id="@+id/buttonCancel"
@@ -130,8 +130,8 @@
             android:layout_gravity="center"
             android:text="Cancel"
             android:gravity="center"
-            android:background="@drawable/button_general"
-            android:textColor="#fff"/>
+            android:background="@drawable/button_properties"
+            android:textColor="#000"/>
 
 
     </LinearLayout>

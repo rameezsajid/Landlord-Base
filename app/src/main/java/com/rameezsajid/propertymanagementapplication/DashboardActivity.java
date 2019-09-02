@@ -1,6 +1,7 @@
 package com.rameezsajid.propertymanagementapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,15 +15,22 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        Button dashboardButton = findViewById(R.id.dashboardButton);
+        CardView cardView1 = findViewById(R.id.cardViewProperties);
+        CardView cardView2 = findViewById(R.id.cardViewAdvertisements);
 
-        dashboardButton.setOnClickListener(new View.OnClickListener() {
+        cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DashboardActivity.this, PropertyActivity.class));
             }
         });
 
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashboardActivity.this, AdvertActivity.class));
+            }
+        });
 
 
     }

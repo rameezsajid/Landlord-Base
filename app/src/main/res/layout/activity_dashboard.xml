@@ -1,33 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardActivity">
+    android:orientation="vertical"
+    tools:context=".DashboardActivity"
+    android:background="@drawable/background_dashboard"
+    android:padding="30dp">
 
-    <TextView
-        android:id="@+id/label"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You have logged in successfully"/>
+        android:id="@+id/cardViewProperties"
+        android:layout_marginBottom="40dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go To Properties"
-        android:padding="20dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/dashboardButton"
-        android:layout_below="@+id/label"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardview_background"
+            android:paddingBottom="20dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go To Report Generator"
-        android:padding="20dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/dashboardButton2"
-        android:layout_below="@+id/dashboardButton"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-</RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_view_holder1"
+                    android:text="Your Properties"
+                    android:textSize="30sp"
+                    android:padding="15dp"
+                    android:textColor="#fff"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_view_holder2"
+                    android:text="Add Properties"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:textColor="#fff"
+                    android:layout_below="@+id/text_view_holder1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_view_holder3"
+                    android:text="View Your Properties"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:textColor="#fff"
+                    android:layout_below="@+id/text_view_holder2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_view_holder4"
+                    android:text="Check Properties Report"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:textColor="#fff"
+                    android:layout_below="@+id/text_view_holder3"/>
+
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/home_sketch"
+                    android:layout_alignParentEnd="true"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/cardViewAdvertisements">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardview_background">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_view_holder11"
+                    android:text="Rent2Rent"
+                    android:textSize="30sp"
+                    android:padding="15dp"
+                    android:textColor="#fff"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_view_holder22"
+                    android:text="View Advertisements"
+                    android:textSize="20dp"
+                    android:padding="15dp"
+                    android:textColor="#fff"
+                    android:layout_below="@+id/text_view_holder11"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_view_holder33"
+                    android:text="Add Advertisements"
+                    android:textSize="20dp"
+                    android:padding="15dp"
+                    android:textColor="#fff"
+                    android:layout_below="@+id/text_view_holder22"/>
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/for_rent"
+                    android:layout_alignParentEnd="true"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
