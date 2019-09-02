@@ -4,69 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background_main">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="10dp">
 
         <EditText
             android:id="@+id/editTextPropertyLocation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter Property Location"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:background="@drawable/et_login"/>
 
         <EditText
             android:id="@+id/editTextPropertyAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter Property Address"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:background="@drawable/et_login"/>
 
         <EditText
             android:id="@+id/editTextPropertyPostcode"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter Property Postcode"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:background="@drawable/et_login"/>
 
         <Spinner
             android:id="@+id/spinnerProperty"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:entries="@array/properties" />
+            android:layout_height="40dp"
+            android:layout_marginBottom="25dp"
+            android:entries="@array/properties"
+            android:textAlignment="center"
+            android:background="@drawable/et_login"/>
 
         <EditText
             android:id="@+id/editTextRent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter Amount Monthly Rental"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:background="@drawable/et_login"/>
 
         <EditText
             android:id="@+id/editTextPropertyTenancyLength"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter Tenancy Length"
-            android:layout_marginBottom="15dp"
-            android:inputType="number"/>
+            android:layout_marginBottom="25dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:background="@drawable/et_login"/>
 
         <EditText
             android:id="@+id/editTextPropertyTenantName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter Tenant Name"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:background="@drawable/et_login"/>
 
         <RadioGroup
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:id="@+id/radioGroup1">
+            android:layout_marginBottom="20dp"
+            android:id="@+id/radioGroup1"
+            android:background="@drawable/et_login"
+            android:padding="20dp">
 
 
             <RadioButton
@@ -74,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:text="Property Management Professionals"
                 android:id="@+id/radioButtonOption1"
-                android:layout_marginBottom="15dp"/>
+                android:layout_marginBottom="20dp"/>
 
             <RadioButton
                 android:layout_width="match_parent"
@@ -88,23 +106,32 @@
         <EditText
             android:id="@+id/editTextManagementName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:hint="Enter Management Name"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:background="@drawable/et_login"/>
 
         <Button
             android:id="@+id/buttonAddProperty"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Add Property" />
+            android:layout_marginBottom="25dp"
+            android:text="Add Property"
+            android:gravity="center"
+            android:background="@drawable/button_general"
+            android:textColor="#fff"/>
 
         <Button
             android:id="@+id/buttonCancel"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Cancel" />
+            android:text="Cancel"
+            android:gravity="center"
+            android:background="@drawable/button_general"
+            android:textColor="#fff"/>
 
 
     </LinearLayout>

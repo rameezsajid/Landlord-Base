@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PropertyViewActivity"></activity>
-        <activity android:name=".PropertyInformationActivity" />
-        <activity android:name=".PropertyActivity" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".PropertyViewActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".PropertyInformationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PropertyActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SignInActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".DashboardActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
