@@ -7,24 +7,28 @@ public class Properties {
     String propertyAddress;
     String propertyPostcode;
     String propertyType;
+    String propertyBedrooms;
     String propertyRental;
     String propertyTenancyLength;
     String propertyTenantName;
     String propertyManagementName;
+    String propertyRefurb;
 
     public Properties() {
     }
 
-    public Properties(String propertyID, String propertyLocation, String propertyAddress, String propertyPostcode, String propertyType, String propertyRental, String propertyTenancyLength, String propertyTenantName, String propertyManagementName) {
+    public Properties(String propertyID, String propertyLocation, String propertyAddress, String propertyPostcode, String propertyType, String propertyBedrooms, String propertyRental, String propertyTenancyLength, String propertyTenantName, String propertyManagementName, String propertyRefurb) {
         this.propertyID = propertyID;
         this.propertyLocation = propertyLocation;
         this.propertyAddress = propertyAddress;
         this.propertyPostcode = propertyPostcode;
         this.propertyType = propertyType;
+        this.propertyBedrooms = propertyBedrooms;
         this.propertyRental = propertyRental;
         this.propertyTenancyLength = propertyTenancyLength;
         this.propertyTenantName = propertyTenantName;
         this.propertyManagementName = propertyManagementName;
+        this.propertyRefurb = propertyRefurb;
     }
 
     public String getPropertyID() {
@@ -67,6 +71,14 @@ public class Properties {
         this.propertyType = propertyType;
     }
 
+    public String getPropertyBedrooms() {
+        return propertyBedrooms;
+    }
+
+    public void setPropertyBedrooms(String propertyBedrooms) {
+        this.propertyBedrooms = propertyBedrooms;
+    }
+
     public String getPropertyRental() {
         return propertyRental;
     }
@@ -97,5 +109,13 @@ public class Properties {
 
     public void setPropertyManagementName(String propertyManagementName) {
         this.propertyManagementName = propertyManagementName;
+    }
+
+    public String getPropertyRefurb() {
+        return propertyRefurb;
+    }
+
+    public void setPropertyRefurb(String propertyRefurb) {
+        this.propertyRefurb = propertyRefurb;
     }
 }

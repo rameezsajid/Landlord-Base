@@ -42,6 +42,8 @@ public class PropertyActivity extends AppCompatActivity {
     private EditText editTextTenancyLength;
     private EditText editTextTenantName;
     private EditText editTextManagementName;
+    private EditText editTextRefurb;
+    private EditText editTextBedrooms;
 
 
     private String userID;
@@ -90,7 +92,7 @@ public class PropertyActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Properties properties =  propertiesList.get(i);
 
-                showDialogBox(properties.getPropertyID(), properties.getPropertyLocation(), properties.getPropertyType(), properties.getPropertyRental(), properties.getPropertyManagementName());
+                showDialogBox(properties.getPropertyID(), properties.getPropertyLocation(), properties.getPropertyType(), properties.getPropertyRental(), properties.getPropertyManagementName(), properties.getPropertyTenancyLength(), properties.getPropertyTenantName(), properties.getPropertyAddress(), properties.getPropertyPostcode(), properties.getPropertyBedrooms(), properties.getPropertyRefurb());
             }
         });
 
@@ -100,7 +102,7 @@ public class PropertyActivity extends AppCompatActivity {
 
     }
 
-    private void showDialogBox(final String propertyID, final String propertyLocation, final String propertyType, final String propertyRental, final String managementName) {
+    private void showDialogBox(final String propertyID, final String propertyLocation, final String propertyType, final String propertyRental, final String managementName, final String tenancyLength, final String tenantName, final String propertyAddress, final String propertyPostcode, final String propertyBedrooms, final String propertyRefurb) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(PropertyActivity.this);
         LayoutInflater inflater = getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.dialog_box, null);
@@ -130,11 +132,23 @@ public class PropertyActivity extends AppCompatActivity {
                 String PropertyType = propertyType;
                 String PropertyRental = propertyRental;
                 String ManagementName = managementName;
+                String Address = propertyAddress;
+                String Postcode = propertyPostcode;
+                String TenancyL = tenancyLength;
+                String TenantName = tenantName;
+                String Bedrooms = propertyBedrooms;
+                String Refurb = propertyRefurb;
                 Intent reportIntent = new Intent(PropertyActivity.this, PropertyInformationActivity.class);
                 reportIntent.putExtra("propertyCurrent", PropertiesLocation);
                 reportIntent.putExtra("propertyType", PropertyType);
                 reportIntent.putExtra("propertyRental", PropertyRental);
                 reportIntent.putExtra("managementName", ManagementName);
+                reportIntent.putExtra("Address", Address);
+                reportIntent.putExtra("Postcode", Postcode);
+                reportIntent.putExtra("Length", TenancyL);
+                reportIntent.putExtra("Tenant", TenantName);
+                reportIntent.putExtra("Bedrooms", Bedrooms);
+                reportIntent.putExtra("Refurb", Refurb);
 
 
                 startActivity(reportIntent);
@@ -167,6 +181,8 @@ public class PropertyActivity extends AppCompatActivity {
         final EditText etManagementNameUpdate = dialogView.findViewById(R.id.editTextManagementName_Update);
         final EditText etTenantNameUpdate = dialogView.findViewById(R.id.editTextPropertyTenantName_Update);
         final EditText etTenancyLengthUpdate = dialogView.findViewById(R.id.editTextPropertyTenancyLength_Update);
+        final EditText etRefurbUpdate = dialogView.findViewById(R.id.editTextRefurbished_Update);
+        final EditText etBedroomsUpdate = dialogView.findViewById(R.id.editTextBedrooms_Update);
 
         final Button buttonCloseUpdate = (Button) dialogView.findViewById(R.id.btnClose_Update);
         final Button buttonUpdateUpdate = (Button) dialogView.findViewById(R.id.btnUpdate_Update);
@@ -202,13 +218,15 @@ public class PropertyActivity extends AppCompatActivity {
                 String t_length = etTenancyLengthUpdate.getText().toString().trim();
                 String t_name = etTenantNameUpdate.getText().toString().trim();
                 String m_name = etManagementNameUpdate.getText().toString().trim();
+                String refurb = etRefurbUpdate.getText().toString().trim();
+                String bedrooms = etBedroomsUpdate.getText().toString().trim();
 
 
                 if (TextUtils.isEmpty(location)){
                     etLocationUpdate.setError("Field Required");
                     return;
                 }
-                updateProperties(propertyID, location, address, postcode, type, rent, t_length, t_name, m_name);
+                updateProperties(propertyID, location, address, postcode, type, bedrooms, rent, t_length, t_name, m_name, refurb);
 
                 alertDialog.dismiss();
 
@@ -317,6 +335,34 @@ public class PropertyActivity extends AppCompatActivity {
             }
         });
 
+        Query queryBedrooms = mFirebaseRef.child("properties").child(userID).child(propertyID);
+
+        queryBedrooms.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                etBedroomsUpdate.setText(dataSnapshot.child("propertyBedrooms").getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        Query queryRefurb = mFirebaseRef.child("properties").child(userID).child(propertyID);
+
+        queryRefurb.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                etRefurbUpdate.setText(dataSnapshot.child("propertyRefurb").getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     private void deleteProperties(String propertyID){
@@ -325,10 +371,10 @@ public class PropertyActivity extends AppCompatActivity {
         Toast.makeText(PropertyActivity.this, "Deleted Property", Toast.LENGTH_SHORT).show();
     }
 
-    private boolean updateProperties (String id, String location, String address, String postcode, String type, String rent, String t_length, String t_name, String m_name){
+    private boolean updateProperties (String id, String location, String address, String postcode, String type, String bedrooms, String rent, String t_length, String t_name, String m_name, String refurb){
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("properties").child(userID).child(id);
 
-        Properties properties = new Properties(id, location, address, postcode, type, rent, t_length, t_name, m_name);
+        Properties properties = new Properties(id, location, address, postcode, type, bedrooms, rent, t_length, t_name, m_name, refurb);
 
         databaseReference.setValue(properties);
 
@@ -356,6 +402,8 @@ public class PropertyActivity extends AppCompatActivity {
         editTextTenancyLength = dialogView.findViewById(R.id.editTextPropertyTenancyLength);
         editTextManagementName = dialogView.findViewById(R.id.editTextManagementName);
         editTextTenantName = dialogView.findViewById(R.id.editTextPropertyTenantName);
+        editTextRefurb = dialogView.findViewById(R.id.editTextRefurb);
+        editTextBedrooms = dialogView.findViewById(R.id.editTextBedrooms);
 
         addButton = (Button) dialogView.findViewById(R.id.buttonAddProperty);
 
@@ -383,19 +431,22 @@ public class PropertyActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String location = editTextLocation.getText().toString().trim();
                 String type = spinnerPropertyType.getSelectedItem().toString();
+                String bedrooms = editTextBedrooms.getText().toString().trim();
                 String address = editTextAddress.getText().toString().trim();
                 String postcode = editTextPostcode.getText().toString().trim();
                 String t_length = editTextTenancyLength.getText().toString().trim();
                 String t_name = editTextTenantName.getText().toString().trim();
                 String rent = editTextRental.getText().toString().trim();
                 String m_name = editTextManagementName.getText().toString().trim();
+                String refurb = editTextRefurb.getText().toString().trim();
+
 
 
                 if (!TextUtils.isEmpty(location) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(postcode)){
 
                     String id = myRef.push().getKey();
 
-                    Properties properties = new Properties(id, location, address, postcode, type, rent, t_length, t_name, m_name);
+                    Properties properties = new Properties(id, location, address, postcode, type, bedrooms, rent, t_length, t_name, m_name, refurb);
 
                     myRef.child(userID).child(id).setValue(properties);
 

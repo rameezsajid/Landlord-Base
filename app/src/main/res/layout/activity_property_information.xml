@@ -1,49 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
+    android:padding="25dp"
+    android:orientation="vertical"
+    android:background="@drawable/background_property_activity"
     tools:context=".PropertyInformationActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_PI1"
-        android:text="Holder1"
-        android:layout_marginBottom="20dp"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:layout_height="match_parent"
+        android:padding="25dp"
+        android:background="@drawable/border_report"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_PI2"
-        android:text="Holder2"
-        android:layout_below="@id/tv_PI1"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Report"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_PI3"
-        android:text="Holder3"
-        android:layout_below="@id/tv_PI2"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/holder_Location"
+            android:text="Location"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_marginBottom="5dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_PI4"
-        android:text="Holder4"
-        android:layout_below="@id/tv_PI3"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/holder_Address"
+            android:text="Address"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/holder_Postcode"
+            android:text="Postcode"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/holder_Bedrooms"
+            android:text="Bedrooms"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/holder_PropertyType"
+            android:text="Property Type"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/holder_TenancyLength"
+            android:text="Tenancy Length"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/holder_TenantName"
+            android:text="Tenant Name"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/holder_Rental"
+            android:text="Rental"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/holder_Management"
+            android:text="Management"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/holder_Refurbishment"
+            android:text="Refurbishment"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:layout_marginBottom="25dp"/>
 
 
-</RelativeLayout>
+    </LinearLayout>
+
+
+</ScrollView>

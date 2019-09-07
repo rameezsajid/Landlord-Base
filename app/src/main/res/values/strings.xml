@@ -9,6 +9,14 @@
         <item>Flat</item>
     </array>
 
+    <array name="bedrooms">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5+</item>
+    </array>
+
     <array name="management">
         <item>Private</item>
         <item>Property Management Professionals</item>

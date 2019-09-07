@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background_main">
+    android:background="@drawable/background_property_activity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,6 +40,15 @@
             android:gravity="center"
             android:background="@drawable/et_add_properties"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Property Type:"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"/>
+
         <Spinner
             android:id="@+id/spinnerProperty"
             android:layout_width="match_parent"
@@ -48,6 +57,17 @@
             android:entries="@array/properties"
             android:textAlignment="center"
             android:background="@drawable/et_add_properties"/>
+
+        <EditText
+            android:id="@+id/editTextBedrooms"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Number of Bedrooms"
+            android:inputType="number"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:background="@drawable/et_add_properties"/>
+
 
         <EditText
             android:id="@+id/editTextRent"
@@ -112,9 +132,20 @@
             android:gravity="center"
             android:background="@drawable/et_add_properties"/>
 
+        <EditText
+            android:id="@+id/editTextRefurb"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Amount Used To Refurb"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:background="@drawable/et_add_properties"
+            android:inputType="number"/>
+
+
         <Button
             android:id="@+id/buttonAddProperty"
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="25dp"
@@ -125,7 +156,7 @@
 
         <Button
             android:id="@+id/buttonCancel"
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Cancel"
