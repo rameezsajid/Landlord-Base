@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdvertActivity"
-    android:background="@drawable/background_main">
+    android:background="@drawable/background_main"
+    android:id="@+id/rel_layoutAdvert">
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,6 +16,15 @@
         android:textSize="30sp"
         android:padding="15dp"
         android:textColor="#fff"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:id="@+id/label"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Advert"
+        android:id="@+id/btnAddAdvert"
+        android:layout_below="@+id/label"
+        android:textSize="16sp"/>
 
 </RelativeLayout>

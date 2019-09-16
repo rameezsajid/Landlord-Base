@@ -28,7 +28,7 @@ public class DashboardActivity extends AppCompatActivity {
         cardView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DashboardActivity.this, AdvertActivity.class));
+                startActivity(new Intent(DashboardActivity.this, UploadActivity.class));
             }
         });
 
