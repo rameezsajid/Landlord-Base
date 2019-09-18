@@ -39,6 +39,8 @@ public class UploadActivity extends AppCompatActivity {
     private ImageView mImageView;
     private ProgressBar mProgressBar;
 
+    private EditText mEditTextLocation;
+
     private Uri mImageUri;
 
     private StorageReference mStorageRef;
@@ -58,6 +60,8 @@ public class UploadActivity extends AppCompatActivity {
         mEditTextFileName = findViewById(R.id.edit_text_file_name);
         mImageView = findViewById(R.id.image_view);
         mProgressBar = findViewById(R.id.progress_bar);
+
+        mEditTextLocation = findViewById(R.id.edit_text_location);
 
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
@@ -131,7 +135,7 @@ public class UploadActivity extends AppCompatActivity {
                             }, 500);
 
                             Toast.makeText(UploadActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
-                            Upload upload = new Upload(mEditTextFileName.getText().toString().trim(), taskSnapshot.getDownloadUrl().toString());
+                            Upload upload = new Upload(mEditTextFileName.getText().toString().trim(), mEditTextLocation.getText().toString().trim(), taskSnapshot.getDownloadUrl().toString());
                             String uploadId = mDatabaseRef.push().getKey();
                             mDatabaseRef.child(uploadId).setValue(upload);
                         }

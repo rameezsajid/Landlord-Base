@@ -1,60 +1,51 @@
 package com.rameezsajid.propertymanagementapplication;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 
-public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
-    private Context mContext;
+public class ImageAdapter extends ArrayAdapter<Upload> {
+    private Activity context;
     private List<Upload> mUploads;
 
-    public ImageAdapter(Context context, List<Upload> uploads) {
-        mContext = context;
-        mUploads = uploads;
+    public ImageAdapter (Activity context, List<Upload> mUploads) {
+        super(context, R.layout.list_layout, mUploads);
+        this.context = context;
+        this.mUploads = mUploads;
     }
 
+    @NonNull
     @Override
-    public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.image_item, parent, false);
-        return new ImageViewHolder(v);
-    }
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        LayoutInflater inflater = context.getLayoutInflater();
 
-    @Override
-    public void onBindViewHolder(ImageViewHolder holder, int position) {
-        Upload uploadCurrent = mUploads.get(position);
-        holder.textViewName.setText(uploadCurrent.getName());
-        Picasso.with(mContext)
-                .load(uploadCurrent.getImageUrl())
-                .placeholder(R.mipmap.ic_launcher)
-                .fit()
-                .centerCrop()
-                .into(holder.imageView);
-    }
+        View listViewItem = inflater.inflate(R.layout.image_item, null, true);
+        Upload uploadCurr = mUploads.get(position);
 
-    @Override
-    public int getItemCount() {
-        return mUploads.size();
-    }
+        TextView textViewName = listViewItem.findViewById(R.id.text_view_name);
+        TextView textViewLocation = listViewItem.findViewById(R.id.text_view_location);
+        ImageView imageView = listViewItem.findViewById(R.id.image_view_upload);
 
-    public class ImageViewHolder extends RecyclerView.ViewHolder {
-        public TextView textViewName;
-        public ImageView imageView;
+        Picasso.with(context).load(uploadCurr.getImageUrl()).placeholder(R.mipmap.ic_launcher).fit().centerCrop().into(imageView);
 
-        public ImageViewHolder(View itemView) {
-            super(itemView);
+        textViewLocation.setText(uploadCurr.getLocation());
+        textViewName.setText(uploadCurr.getName());
 
-            textViewName = itemView.findViewById(R.id.text_view_name);
-            imageView = itemView.findViewById(R.id.image_view_upload);
-        }
+
+        return listViewItem;
     }
 }

@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:id="@+id/listViewAdvert"></ListView>
 
 </RelativeLayout>
