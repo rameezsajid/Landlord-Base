@@ -4,7 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".ImagesActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_view_add_advert"
+        android:text="Add Advert"
+        android:padding="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlueLink"/>
 
     <ProgressBar
         android:id="@+id/progress_circle"
@@ -15,6 +25,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/text_view_add_advert"
         android:id="@+id/listViewAdvert"></ListView>
 
 </RelativeLayout>

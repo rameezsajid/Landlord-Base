@@ -36,14 +36,17 @@ public class ImageAdapter extends ArrayAdapter<Upload> {
         View listViewItem = inflater.inflate(R.layout.image_item, null, true);
         Upload uploadCurr = mUploads.get(position);
 
-        TextView textViewName = listViewItem.findViewById(R.id.text_view_name);
+        TextView textViewRent = listViewItem.findViewById(R.id.text_view_rent);
         TextView textViewLocation = listViewItem.findViewById(R.id.text_view_location);
         ImageView imageView = listViewItem.findViewById(R.id.image_view_upload);
+        TextView textViewType = listViewItem.findViewById(R.id.text_view_type);
 
         Picasso.with(context).load(uploadCurr.getImageUrl()).placeholder(R.mipmap.ic_launcher).fit().centerCrop().into(imageView);
 
-        textViewLocation.setText(uploadCurr.getLocation());
-        textViewName.setText(uploadCurr.getName());
+        textViewLocation.setText(uploadCurr.getAddress() + ", " + uploadCurr.getPostcode() + ", " + uploadCurr.getLocation());
+        textViewRent.setText("£" + uploadCurr.getRent() + "pcm");
+
+        textViewType.setText(uploadCurr.getBedroom() + " " + "Bedroom " + uploadCurr.getPropertyType());
 
 
         return listViewItem;

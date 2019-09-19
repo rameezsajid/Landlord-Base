@@ -46,9 +46,8 @@ public class ImagesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_images);
 
-//        mRecyclerView = findViewById(R.id.recycler_view);
-//        mRecyclerView.setHasFixedSize(true);
-//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        TextView textView = findViewById(R.id.text_view_add_advert);
 
         mListView = findViewById(R.id.listViewAdvert);
 
@@ -88,14 +87,23 @@ public class ImagesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Upload upload = mUploads.get(i);
 
-                showDialogBox(upload.getName(), upload.getImageUrl());
+                showDialogBox(upload.getName(), upload.getImageUrl(), upload.getAddress(), upload.getPostcode(), upload.getLocation(),
+                        upload.getBedroom(), upload.getPropertyType(), upload.getEmail(), upload.getPhone(), upload.getRent());
 
 
             }
         });
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ImagesActivity.this, UploadActivity.class));
+            }
+        });
     }
 
-    private void showDialogBox(final String name, final String url) {
+    private void showDialogBox(final String name, final String url, final String address, final String postcode, final String location, final String bedroom,
+                               final String type, final String email, final String phone, final String rent) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(ImagesActivity.this);
         LayoutInflater inflater = getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.dialog_advert, null);
@@ -105,12 +113,25 @@ public class ImagesActivity extends AppCompatActivity {
         final AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
 
-        final TextView textViewName = dialogView.findViewById(R.id.text_view_h1);
+        final TextView textViewType = dialogView.findViewById(R.id.text_view_h0);
+        final TextView textViewRent = dialogView.findViewById(R.id.text_view_h1);
+        final TextView textViewFullAddress = dialogView.findViewById(R.id.text_view_h2);
+
+        final TextView textViewName = dialogView.findViewById(R.id.text_view_h3);
+        final TextView textViewPhone = dialogView.findViewById(R.id.text_view_h4);
+        final TextView textViewEmail = dialogView.findViewById(R.id.text_view_h5);
+
+
         final ImageView imageView = dialogView.findViewById(R.id.dialog_ImageView);
 
         Picasso.with(this).load(url).placeholder(R.mipmap.ic_launcher).fit().centerCrop().into(imageView);
-        textViewName.setText(name);
+        textViewName.setText("Name: " + name);
+        textViewPhone.setText("Phone: " + phone);
+        textViewEmail.setText("Email: " + email);
 
+        textViewFullAddress.setText(address + ", " + postcode + ", " + location);
+        textViewRent.setText("£" + rent + "pcm");
+        textViewType.setText(bedroom + " " + "Bedroom" + " " + type);
 
     }
 

@@ -1,71 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/background_property_activity"
     tools:context=".UploadActivity">
 
-    <Button
-        android:id="@+id/button_choose_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Choose file" />
-
-    <EditText
-        android:id="@+id/edit_text_file_name"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_below="@+id/button_choose_image"
-        android:hint="Enter file name" />
-
-    <EditText
-        android:id="@+id/edit_text_location"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_below="@+id/edit_text_file_name"
-        android:hint="Enter location" />
-
-    <ImageView
-        android:id="@+id/image_view"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/progress_bar"
-        android:layout_below="@id/edit_text_location"
-        android:layout_marginTop="16dp" />
+        android:orientation="vertical">
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_upload"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="16dp" />
+        <Button
+            android:id="@+id/button_choose_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose file"
+            android:background="@drawable/button_properties"
+            android:padding="20dp"
+            android:textSize="16sp"/>
 
-    <Button
-        android:id="@+id/button_upload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Upload" />
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
 
-    <TextView
-        android:id="@+id/text_view_show_uploads"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button_upload"
-        android:layout_alignTop="@+id/button_upload"
-        android:layout_marginStart="25dp"
-        android:layout_toEndOf="@+id/button_upload"
-        android:gravity="center"
-        android:text="Show Uploads"
-        android:textSize="16sp" />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/edit_text_location"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:hint="Enter location"
+            android:background="@drawable/et_add_properties"
+            android:paddingStart="5dp"
+            android:layout_marginBottom="25dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_address"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:hint="Enter Address"
+            android:paddingStart="5dp"
+            android:background="@drawable/et_add_properties"
+            android:layout_marginBottom="25dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_postcode"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:hint="Enter Postcode"
+            android:paddingStart="5dp"
+            android:background="@drawable/et_add_properties"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Property Type:"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"/>
+
+        <Spinner
+            android:id="@+id/spinner_propertyTypeAd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="25dp"
+            android:entries="@array/properties"
+            android:background="@drawable/et_add_properties"
+            android:textAlignment="center"
+            android:layout_marginStart="16dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_bedroom"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:hint="How Many Bedroom?"
+            android:paddingStart="5dp"
+            android:background="@drawable/et_add_properties"
+            android:layout_marginBottom="25dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_rent"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:hint="How Much Rent pcm?"
+            android:paddingStart="5dp"
+            android:background="@drawable/et_add_properties"
+            android:layout_marginBottom="25dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_file_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:hint="Enter Your Name"
+            android:paddingStart="5dp"
+            android:background="@drawable/et_add_properties"
+            android:layout_marginBottom="25dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:hint="Enter Phone Number"
+            android:inputType="phone"
+            android:paddingStart="5dp"
+            android:background="@drawable/et_add_properties"
+            android:layout_marginBottom="25dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:hint="Enter Email Address"
+            android:paddingStart="5dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/et_add_properties"
+            android:layout_marginBottom="25dp"/>
+
+
+        <Button
+            android:id="@+id/button_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload"
+            android:background="@drawable/button_properties"
+            android:padding="20dp"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/text_view_show_uploads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="center"
+            android:text="Show Ads"
+            android:textSize="16sp"
+            android:textColor="@color/colorBlueLink"/>
+
+    </LinearLayout>
 
 
 
-</RelativeLayout>
+
+
+</ScrollView>

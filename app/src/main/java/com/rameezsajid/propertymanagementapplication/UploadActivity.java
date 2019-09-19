@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,11 +36,12 @@ public class UploadActivity extends AppCompatActivity {
     private Button mButtonChooseImage;
     private Button mButtonUpload;
     private TextView mTextViewShowUploads;
-    private EditText mEditTextFileName;
+    private EditText mEditTextFileName, mEditTextEmail, mEditTextPhone;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
 
-    private EditText mEditTextLocation;
+    private EditText mEditTextLocation, mEditTextAddress, mEditTextPostcode, mEditTextBedroom, mEditTextRent;
+    private Spinner spinnerPropertyType;
 
     private Uri mImageUri;
 
@@ -57,11 +59,22 @@ public class UploadActivity extends AppCompatActivity {
         mButtonChooseImage = findViewById(R.id.button_choose_image);
         mButtonUpload = findViewById(R.id.button_upload);
         mTextViewShowUploads = findViewById(R.id.text_view_show_uploads);
-        mEditTextFileName = findViewById(R.id.edit_text_file_name);
+
         mImageView = findViewById(R.id.image_view);
         mProgressBar = findViewById(R.id.progress_bar);
 
+        mEditTextFileName = findViewById(R.id.edit_text_file_name);
+        mEditTextPhone = findViewById(R.id.edit_text_phone);
+        mEditTextEmail = findViewById(R.id.edit_text_email);
+
         mEditTextLocation = findViewById(R.id.edit_text_location);
+        mEditTextAddress = findViewById(R.id.edit_text_address);
+        mEditTextPostcode = findViewById(R.id.edit_text_postcode);
+
+        mEditTextBedroom = findViewById(R.id.edit_text_bedroom);
+        mEditTextRent = findViewById(R.id.edit_text_rent);
+
+        spinnerPropertyType = findViewById(R.id.spinner_propertyTypeAd);
 
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
@@ -135,7 +148,10 @@ public class UploadActivity extends AppCompatActivity {
                             }, 500);
 
                             Toast.makeText(UploadActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
-                            Upload upload = new Upload(mEditTextFileName.getText().toString().trim(), mEditTextLocation.getText().toString().trim(), taskSnapshot.getDownloadUrl().toString());
+                            Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),
+                                    mEditTextLocation.getText().toString().trim(), mEditTextAddress.getText().toString().trim(), mEditTextPostcode.getText().toString().trim(),
+                                    mEditTextBedroom.getText().toString().trim(), spinnerPropertyType.getSelectedItem().toString(), mEditTextRent.getText().toString().trim(),
+                                    mEditTextEmail.getText().toString().trim(), mEditTextPhone.getText().toString().trim(), taskSnapshot.getDownloadUrl().toString());
                             String uploadId = mDatabaseRef.push().getKey();
                             mDatabaseRef.child(uploadId).setValue(upload);
                         }
