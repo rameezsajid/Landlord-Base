@@ -7,6 +7,8 @@
 # Firebase Usage
 Ensure you have a Firebase account and proceed to add your own **google services** file into the **app** folder in your Android Studio project, with out this Firebase will not be able to do login authentication.
 
+- All Firebase dependencies must be the same version.
+
 # Screenshots of Application
 
 <img src="screenshots/image1.jpeg" width=350> <img src="screenshots/image2.jpeg" width=350>
