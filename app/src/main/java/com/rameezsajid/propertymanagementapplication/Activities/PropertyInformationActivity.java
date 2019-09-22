@@ -1,24 +1,16 @@
-package com.rameezsajid.propertymanagementapplication;
+package com.rameezsajid.propertymanagementapplication.Activities;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
+import com.rameezsajid.propertymanagementapplication.Model.Properties;
+import com.rameezsajid.propertymanagementapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,10 @@
-package com.rameezsajid.propertymanagementapplication;
+package com.rameezsajid.propertymanagementapplication.Activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +15,6 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -28,6 +26,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.rameezsajid.propertymanagementapplication.Model.Properties;
+import com.rameezsajid.propertymanagementapplication.Model.PropertyList;
+import com.rameezsajid.propertymanagementapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;

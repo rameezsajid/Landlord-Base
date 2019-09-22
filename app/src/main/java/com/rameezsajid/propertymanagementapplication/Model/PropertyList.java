@@ -1,4 +1,4 @@
-package com.rameezsajid.propertymanagementapplication;
+package com.rameezsajid.propertymanagementapplication.Model;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.rameezsajid.propertymanagementapplication.R;
 
 import java.util.List;
 

@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:orientation="vertical"
     android:background="@drawable/background_property_activity"
-    tools:context=".UploadActivity">
+    tools:context=".Activities.UploadActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

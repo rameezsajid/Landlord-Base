@@ -1,4 +1,4 @@
-package com.rameezsajid.propertymanagementapplication;
+package com.rameezsajid.propertymanagementapplication.Model;
 
 public class Properties {
 

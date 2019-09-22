@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DashboardActivity"
+    tools:context=".Activities.DashboardActivity"
     android:background="@drawable/background_dashboard"
     android:padding="30dp">
 

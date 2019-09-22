@@ -1,4 +1,4 @@
-package com.rameezsajid.propertymanagementapplication;
+package com.rameezsajid.propertymanagementapplication.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +27,8 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
+import com.rameezsajid.propertymanagementapplication.R;
+import com.rameezsajid.propertymanagementapplication.Model.Upload;
 import com.squareup.picasso.Picasso;
 
 public class UploadActivity extends AppCompatActivity {

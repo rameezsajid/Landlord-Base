@@ -11,26 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ImagesActivity"></activity>
-        <activity android:name=".UploadActivity" />
-        <activity android:name=".AdvertActivity" />
+        <activity android:name=".Activities.ImagesActivity"></activity>
+        <activity android:name=".Activities.UploadActivity" />
+        <activity android:name=".Activities.AdvertActivity" />
         <activity
-            android:name=".PropertyViewActivity"
+            android:name=".Activities.PropertyInformationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PropertyInformationActivity"
+            android:name=".Activities.PropertyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PropertyActivity"
+            android:name=".Activities.SignInActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".Activities.DashboardActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DashboardActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
