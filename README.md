@@ -5,6 +5,9 @@
 - Updated Final Year Project, Adding New Features such as Report Generator
 - Rent2Rent ad posting feature implemented
 
+# About the Application
+Landlord Base is a property management application that allows users to be able to add, modify and delete property data as well as generate reports for each property. The property advertisement feature allows users to post and view property advertisements.
+
 # Firebase Usage
 Ensure you have a Firebase account and proceed to add your own **google services** file into the **app** folder in your Android Studio project, with out this Firebase will not be able to do login authentication.
 
