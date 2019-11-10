@@ -4,7 +4,8 @@
 - Built Using Java
 - Firebase for Database and User Login and Registeration
 - Updated Final Year Project, Adding New Features such as Report Generator
-- Rent2Rent ad posting feature implemented
+- Rent2Rent Ad Posting Feature implemented
+- MVC Design Pattern used
 
 # About the Application
 Landlord Base is a property management application that allows users to be able to add, modify and delete property data as well as generate reports for each property. The property advertisement feature allows users to post and view property advertisements.
