@@ -17,7 +17,7 @@ Ensure you have a Firebase account and proceed to add your own **google services
 
 # Screenshots of Application
 
-<img src="screenshots/image1.jpeg" width=350> <img src="screenshots/image2.jpeg" width=350>
+<img src="screenshots/image1.jpeg" width=300> <img src="screenshots/image2.jpeg" width=300>
 
 
-<img src="screenshots/image3.jpeg" width=350> <img src="screenshots/image4.jpeg" width=350>
+<img src="screenshots/image3.jpeg" width=300> <img src="screenshots/image4.jpeg" width=300>
