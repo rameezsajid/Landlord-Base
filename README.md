@@ -7,7 +7,7 @@
 - Rent2Rent Ad Posting Feature implemented
 - MVC Design Pattern used
 
-# About the Application
+# About
 Landlord Base is a property management application that allows users to be able to add, modify and delete property data as well as generate reports for each property. The property advertisement feature allows users to post and view property advertisements.
 
 # Firebase Usage
