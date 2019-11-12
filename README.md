@@ -3,7 +3,8 @@
 - Android SDK
 - New Version of Property Management Android Application
 - Built Using Java
-- Firebase for Database and User Login and Registeration
+- Firebase User Login and Registeration Authentication
+- Firebase Database
 - Updated Final Year Project, Adding New Features such as Report Generator
 - Rent2Rent Ad Posting Feature implemented
 - MVC Design Pattern used
