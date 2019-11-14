@@ -6,7 +6,7 @@
 - Firebase User Login and Registeration Authentication
 - Firebase Database
 - Updated Final Year Project, Adding New Features such as Report Generator
-- Rent2Rent Ad Posting Feature implemented
+- Rent2Rent Ad Posting Feature Implemented
 - MVC Design Pattern used
 
 # About
