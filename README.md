@@ -1,7 +1,7 @@
 # Landlord Base - Android
 - Android Studio
 - Android SDK
-- New Version of Property Management Android Application
+- New Version of Property Management App
 - Built Using Java
 - Firebase User Login and Registeration Authentication
 - Firebase Database
