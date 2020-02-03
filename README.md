@@ -1,5 +1,5 @@
 # Landlord Base - Android
-- Android Studio
+- Android Studio - IDE
 - Android SDK
 - New Version of Property Management App
 - Built Using Java
