@@ -13,7 +13,7 @@
 Landlord Base is a property management app that allows users to be able to add, modify and delete property data as well as generate reports for each property. The property advertisement feature allows users to post and view property advertisements.
 
 # Firebase Usage
-Ensure you have a Firebase account and proceed to add your own **google services** file into the **app** folder in your Android Studio project, with out this Firebase will not be able to do login authentication.
+Ensure you have a Firebase account and proceed to add your own **google services** file into the **app** folder in your Android Studio project, with out this Firebase will not be able to authenticate login services.
 
 - All Firebase dependencies must be the same version.
 
