@@ -1,7 +1,7 @@
 # Landlord Base - Android
 - Android Studio IDE
 - Android SDK
-- New Version of Property Management App
+- New Version of Lime Landlords
 - Built Using Java
 - Firebase User Login and Registeration Authentication
 - Firebase Database
