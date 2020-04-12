@@ -5,7 +5,7 @@
 - Built Using Java
 - Firebase User Login and Registeration Authentication
 - Firebase Database
-- Further Developed My Final Year Project, Adding New Features such as Report Generator
+- Further Developed My Final Year Project - Adding New Features such as Report Generator
 - Rent2Rent Ad Posting Feature Implemented
 - MVC Design Pattern used
 
