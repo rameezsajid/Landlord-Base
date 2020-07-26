@@ -8,7 +8,7 @@
 - Further Developed My Final Year Project - Adding New Features such as Report Generator
 - Redesigned App
 - Rent2Rent Ad Posting Feature Implemented
-- MVC Design Pattern used
+- MVC Design Pattern
 
 # About
 Landlord Base is a property management app that allows users to be able to add, modify and delete property data as well as generate reports for each property. The property advertisement feature allows users to post and view property advertisements.
